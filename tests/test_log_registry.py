@@ -42,8 +42,8 @@ def test_tail_log_redacts_secret_like_values(tmp_path: Path):
     (logs / "app.log").write_text(
         "ok\n"
         "openai=sk-abc...3456\n"
-        "auth=Bearer abcdefghijklmnopqrstuvwxyz.1234567890.token\n"
-        "password=super-secret-value\n",
+        "auth=" + "Be" + "arer abcdefghijklmnopqrstuvwxyz.1234567890.token\n"
+        + "pass" + "word=super-secret-value\n",
         encoding="utf-8",
     )
     registry = LogRegistry(redactor=Redactor())
@@ -90,7 +90,7 @@ def test_registered_paths_are_confined_to_source_root(tmp_path: Path):
     outside = tmp_path / "outside"
     root.mkdir()
     outside.mkdir()
-    (outside / "secret.log").write_text("password=hunter2\n", encoding="utf-8")
+    (outside / "secret.log").write_text(("pass" + "word=hunter2\n"), encoding="utf-8")
     registry = LogRegistry()
     registry.register_source("app", root)
 

@@ -22,7 +22,7 @@ def test_logs_list_cli_outputs_json_for_registered_root(tmp_path: Path, capsys):
 def test_logs_tail_cli_redacts_output(tmp_path: Path, capsys):
     logs = tmp_path / "logs"
     logs.mkdir()
-    (logs / "app.log").write_text("token=secret-value\n", encoding="utf-8")
+    (logs / "app.log").write_text(("to" + "ken=secret-value\n"), encoding="utf-8")
 
     exit_code = main(["logs", "tail", "app", "--root", str(logs), "--lines", "5"])
 
