@@ -154,3 +154,37 @@ Most agent tools either chat, run workflows, or show dashboards. Selene's differ
 The promise:
 
 > Selene turns local AI agents into an operating system you can trust — and a proof layer for autonomous work.
+
+## System optimization, VPS, email, and automatic routing
+
+Selene should eventually manage the machine it runs on, not just chat about work.
+
+Safe optimizer target:
+
+- read-only diagnosis first
+- ranked optimization plans
+- receipts and rollback notes
+- no reckless cleanerware behavior
+- no disabling security, backups, firewall, drivers, registry, BIOS, or user files without exact approval
+
+Local VPS target:
+
+- WSL2/Docker/systemd/Tailscale health
+- service status, logs, backups, start/stop/restart plans
+- private access first
+- no public bind by default
+
+Email/account target:
+
+- per-user or per-install mailbox identities
+- verification-code reading after authorization
+- legitimate account setup workflows with approvals
+- no shared global mailbox secret
+- no spam, ban evasion, or account farming
+
+Automatic routing target:
+
+- skills selected from task/project/risk context
+- models selected from task + hardware fit
+- decisions shown before execution
+- missing required skills or unsafe model authority blocks the run
