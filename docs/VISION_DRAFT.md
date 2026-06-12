@@ -86,6 +86,30 @@ Traits:
 
 Implementation should still audition actual voices before locking it. The chosen voice must survive long sessions without getting annoying.
 
+
+## Real-time voice requirement
+
+Selene should stay armed for wake detection, not full ambient transcription.
+
+Wake paths:
+
+- name wake: `Selene`, with common mishearings like `Celine` normalized
+- clap-clap wake: two local amplitude spikes inside a tuned timing window
+
+Privacy rule:
+
+- armed mode can detect wake locally
+- full transcription starts only after wake/listen mode
+- ambient speech before wake is not sent to STT/model, not stored, and not shown
+
+After wake, speech should stream into an editable command text box as words are spoken.
+
+Example target flow:
+
+> "Selene, search and find cute dog pictures."
+
+Selene should create a safe browser WorkOrder, open/reuse a browser, visibly type the query, submit the search, and produce a receipt. CDP/selector automation is primary; GUI fallback requires leases, previews, red-zone checks, STOP, and receipts.
+
 ## Core primitives
 
 - LogRegistry
