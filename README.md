@@ -19,6 +19,8 @@ Selene OSS is not an Odysseus copy/paste. Odysseus is a useful reference for wha
 
 Pre-alpha. Slice 1 is LogRegistry: list, resolve, tail, and redact logs from known runtime surfaces.
 
+Vision draft: [`docs/VISION_DRAFT.md`](docs/VISION_DRAFT.md)
+
 ## Design rule
 
 If state is not wired, show `unknown`, `offline`, or `not configured`. Do not fake dashboard metrics.

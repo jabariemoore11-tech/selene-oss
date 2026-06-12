@@ -1,0 +1,132 @@
+# Selene Vision Draft
+
+Status: draft, based on JB's selected direction. This is a product north star, not a finished spec.
+
+## One-line picture
+
+Selene is an Odysseus-inspired, clean-room command OS for local AI agents: a living cockpit for models, skills, memory, tools, logs, receipts, and real work.
+
+The first public wedge is a developer/local-agent cockpit. The full product grows into a personal life OS with voice, projects, approvals, receipts, and safe autonomy.
+
+## Identity stack
+
+Selene is all four, in this order:
+
+1. **Developer / agent cockpit** — repos, models, logs, tools, tests, failures, receipts.
+2. **Personal life OS** — tasks, email drafts, calendar, notes, mobile commands, project lanes.
+3. **Operator OS** — gets work done, proves it, stays quiet until needed.
+4. **Living companion layer** — voice/personality after the operating spine is trustworthy.
+
+## What Selene is not
+
+- Not a generic chatbot.
+- Not a fake dashboard.
+- Not a prompt library with buttons.
+- Not an agent swarm fantasy.
+- Not automation without proof or stop controls.
+- Not an Odysseus source copy. Odysseus is a reference point; Selene core is clean-room.
+
+## Product principles
+
+1. **State is visible.** If something is not wired, show `not configured`, `offline`, or `unknown`.
+2. **Actions produce receipts.** Meaningful work should show command, scope, files touched, tools used, logs read, tests run, and rollback hints.
+3. **Local-first, cloud-aware.** Prefer local models/tools when possible. Escalate intentionally.
+4. **Autonomy needs rails.** Low-risk work can run. Safe writes are allowed. High-risk work needs exact approval. STOP must always work.
+5. **Projects are lanes.** Each project defines allowed paths, test commands, proof rules, default skills, and risk boundaries.
+6. **Logs are first-class.** Selene indexes, redacts, tails, and connects logs to failures and receipts.
+7. **Motion must mean state.** Animation is allowed to be bold, but it cannot lie.
+
+## Visual identity
+
+Selene should feel like a dark command room with a living cortex.
+
+The visual identity is not a tiny orb. It is a full cortex/world map:
+
+- center: Selene cortex / command brain
+- orbit: project lane, WorkOrders, models, skills, memory, receipts, logs, voice, STOP
+- drawers: details, approvals, receipt browser, model world, skill loads, logs, doctor/autopsy
+
+Visual direction:
+
+- black/navy/graphite base
+- moon-metal silver and cyan accents
+- green only for verified/proof
+- amber for approval/risk
+- red for STOP/blocked
+- readable technical type
+- no gamer neon, no fake metrics
+
+Cortex states:
+
+- idle
+- wake detected
+- listening
+- transcribing
+- thinking
+- executing
+- approval needed
+- blocked
+- speaking
+- stopped
+
+## Voice direction
+
+Target voice: warm British governess/operator energy.
+
+Traits:
+
+- precise
+- calm
+- competent
+- a little magical
+- politely bossy when needed
+- never bubbly
+- never corporate
+- never fake-friendly
+
+Implementation should still audition actual voices before locking it. The chosen voice must survive long sessions without getting annoying.
+
+## Core primitives
+
+- LogRegistry
+- SettingsStore
+- ModelRegistry
+- MemoryGraph
+- SkillCapsules
+- WorkOrders
+- RunLedger
+- CapabilityVault
+- ProofReceipts
+- ActionFirewall
+- ProjectLanes
+- VoiceStateMachine
+- Blackbox / Autopsy / ReplayLab
+
+## First public audience
+
+Long-term audience is broad, but the first useful wedge should serve people who already feel the pain:
+
+- solo devs running local agents on repos
+- homelab/local-model users
+- AI creators/operators running browser/model/content workflows
+- productivity users later, after the rails are proven
+
+## First public wedge
+
+Reliability for local AI-agent work:
+
+- inspect logs
+- manage model endpoints and local model health
+- show selected skills/memory
+- create WorkOrders
+- run tasks with receipts
+- block unsafe actions
+- recover from failures through blackbox records and replay tests
+
+## Differentiator
+
+Most agent tools either chat, run workflows, or show dashboards. Selene's difference is the control plane: visible state, explicit risk boundaries, receipts, STOP controls, and replayable failure recovery.
+
+The promise:
+
+> Selene turns local AI agents into an operating system you can trust — and a proof layer for autonomous work.
